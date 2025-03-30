@@ -37,7 +37,7 @@ module "auto_scaling" {
 }
 
 module "cdn" {
-  source = "./modules/cdn"  # Corrected to point to "cdn" directory
+  source = "./modules/cdn"  
   environment = terraform.workspace
   s3_bucket_domain_name = module.s3.bucket_domain_name
   load_balancer_dns = module.load_balancer.lb_dns_name
