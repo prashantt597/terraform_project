@@ -1,59 +1,47 @@
 variable "aws_region" {
-  description = "value"
-  default = "ap-south-2"
+  description = "Region"
 }
 
 variable "aws_vpc" {
-  description = "value"
-  default = "10.0.0.0/16"
+  description = "VPC"
 }
 
 variable "Pub-subnet_cidr-1" {
-  description = "value"
-  default = "10.0.1.0/24"
+  description = "Pub-subnet-1"
 }
 
 variable "Pub-subnet_cidr-2" {
-  description = "value"
-  default = "10.0.2.0/24"
+  description = "Pub-subnet-2"
 }
 
 variable "pvt-subnet-cidr-1" {
-  description = "value"
-  default = "10.0.3.0/24"
+  description = "Pvt-subnet-1"
 }
 
 variable "pvt-subnet-cidr-2" {
-  description = "value"
-  default = "10.0.4.0/24"
+  description = "Pvt-subnet-2"
 }
 
 variable "avail-zone-pub1" {
-  description = "value"
-  default = "ap-south-2a"
+  description = "Pub-AZ-1"
 }
 
 variable "avail-zone-pub2" {
-  description = "value"
-  default = "ap-south-2b"
+  description = "Pub-AZ-2"
 }
 
 variable "avail-zone-pvt1" {
-  description = "value"
-  default = "ap-south-2a"
+  description = "Pvt-AZ-1"
 }
 
 variable "avail-zone-pvt2" {
-  description = "value"
-  default = "ap-south-2b"
+  description = "Pvt-AZ-2"
 }
 
 variable "cidr_pub_route" {
-  description = "value"
-  default = "0.0.0.0/0"
+  description = "Pub-CIDR"
 }
 
 variable "cidr-pvt-route" {
-  description = "value"
-  default = "0.0.0.0/0"
+  description = "pvt-CIDR"
 }

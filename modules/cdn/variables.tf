@@ -1,11 +1,11 @@
 variable "environment" {
-  description = "value"
+  type = string
 }
 
 variable "s3_bucket_domain_name" {
-  description = "value"
+  type = string
 }
 
 variable "load_balancer_dns" {
-  description = "value"
+  type = string
 }

@@ -1,7 +1,7 @@
 variable "environment" {
-  description = "value"
+  description = "Env."
 }
 
 variable "bucket_name" {
-  description = "value"
+  description = "Bucket-Name"
 }

@@ -38,14 +38,11 @@ resource "aws_security_group" "alb_sg" {
   }
 }
 
-data "template_file" "user_data" {
-  template = file("${path.module}/../../html/${var.environment}.html")
-}
-
 resource "aws_launch_template" "launch_template" {
   name          = var.environment
-  image_id      = "ami-09c8132600c548ed5" # Amazon Linux 2 in ap-south-2
+  image_id      = "ami-09c8132600c548ed5"
   instance_type = "t3.micro"
+  key_name      = "hydra"
   iam_instance_profile {
     name = var.iam_instance_profile
   }
@@ -55,7 +52,7 @@ resource "aws_launch_template" "launch_template" {
               yum install -y httpd
               systemctl start httpd
               systemctl enable httpd
-              echo "${data.template_file.user_data.rendered}" > /var/www/html/index.html
+              echo "<!DOCTYPE html><html><body><h1>${var.environment} Environment</h1><p>March 29, 2025</p></body></html>" > /var/www/html/index.html
               EOF
   )
   network_interfaces {

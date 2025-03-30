@@ -2,12 +2,6 @@ provider "aws" {
   region = var.aws_region
 }
 
-resource "null_resource" "workspace_check" {
-  provisioner "local-exec" {
-    command = "echo Using workspace: ${terraform.workspace}"
-  }
-}
-
 module "vpc" {
   source = "./modules/vpc"
   environment = terraform.workspace
@@ -16,7 +10,7 @@ module "vpc" {
 module "s3" {
   source = "./modules/s3"
   environment = terraform.workspace
-  bucket_name = "${terraform.workspace}-bucket-${module.s3.random_suffix}" # Compute here
+  bucket_name = "${terraform.workspace}-bucket-${module.s3.random_suffix}"
 }
 
 module "iam" {
@@ -42,8 +36,8 @@ module "auto_scaling" {
   iam_instance_profile = module.iam.instance_profile_name
 }
 
-module "hoor" {
-  source = "./modules/hoor"
+module "cdn" {
+  source = "./modules/cdn"  # Corrected to point to "cdn" directory
   environment = terraform.workspace
   s3_bucket_domain_name = module.s3.bucket_domain_name
   load_balancer_dns = module.load_balancer.lb_dns_name

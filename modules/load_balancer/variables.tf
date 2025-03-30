@@ -1,15 +1,15 @@
 variable "environment" {
-  description = "value"
+  description = "env"
 }
 
 variable "vpc_id" {
-  description = "value"
+  description = "VPC-Id"
 }
 
 variable "public_subnet_1_id" {
-  description = "value"
+  description = "Pub-Subnet-1"
 }
 
 variable "public_subnet_2_id" {
-  description = "value"
+  description = "Pub-subnet-2"
 }
