@@ -1,0 +1,53 @@
+<!-- Stage Environment Page -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Stage Environment</title>
+        <style>
+            body {
+                margin: 0;
+                font-family: 'Arial', sans-serif;
+                background: linear-gradient(135deg, #3f51b5, #5c6bc0);
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+            }
+            .container {
+                text-align: center;
+                padding: 40px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 15px;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+                backdrop-filter: blur(10px);
+                animation: fadeIn 1.5s ease-in-out;
+            }
+            h1 {
+                font-size: 48px;
+                text-transform: uppercase;
+                color: #fff;
+            }
+            p {
+                font-size: 20px;
+                color: #e0e0e0;
+            }
+            .highlight {
+                color: #ffeb3b;
+                font-weight: bold;
+            }
+            @keyframes fadeIn {
+                0% { opacity: 0; transform: translateY(-20px); }
+                100% { opacity: 1; transform: translateY(0); }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Welcome to the <span class="highlight">Stage</span> Environment</h1>
+            <p>Final review before production deployment!</p>
+        </div>
+    </body>
+    </html>
