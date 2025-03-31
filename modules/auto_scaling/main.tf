@@ -1,3 +1,11 @@
+locals {
+  launch_template_name = "My-${var.environment}"  # Results in My-qa, My-dev, My-stage
+  asg_name             = "My-${var.environment}-asg"
+  ec2_sg_name          = "My-${var.environment}-ec2-sg"
+  alb_sg_name          = "My-${var.environment}-alb-sg"
+}
+
+
 resource "aws_security_group" "ec2_sg" {
   name        = var.environment
   description = "Allow SSH, HTTP, and HTTPS for instance"
