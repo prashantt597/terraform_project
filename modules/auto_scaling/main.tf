@@ -110,7 +110,7 @@ resource "aws_launch_template" "launch_template" {
 
 resource "aws_autoscaling_group" "my_asg" {
   name                = var.environment
-  vpc_zone_identifier = [var.var.pvt-subnet-cidr-3, var.var.pvt-subnet-cidr-1]
+  vpc_zone_identifier = [var.public_subnet_1_id, var.public_subnet_2_id]
   desired_capacity    = 2
   min_size            = 1
   max_size            = 3
