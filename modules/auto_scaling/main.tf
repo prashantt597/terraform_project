@@ -96,7 +96,7 @@ resource "aws_launch_template" "launch_template" {
   )
 
   network_interfaces {
-    associate_public_ip_address = true
+    associate_public_ip_address = false
     security_groups             = [aws_security_group.ec2_sg.id]
   }
 
@@ -110,7 +110,7 @@ resource "aws_launch_template" "launch_template" {
 
 resource "aws_autoscaling_group" "my_asg" {
   name                = var.environment
-  vpc_zone_identifier = [var.public_subnet_1_id, var.public_subnet_2_id]
+  vpc_zone_identifier = [var.var.pvt-subnet-cidr-3, var.var.pvt-subnet-cidr-1]
   desired_capacity    = 2
   min_size            = 1
   max_size            = 3
